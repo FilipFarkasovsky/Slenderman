@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
 
     [Header("Movement")]
-    public float moveSpeed = 4500;
-    public float maxSpeed = 20;
+    public float moveSpeed = 900f;
+    public float maxSpeed = 3f;
     public bool grounded;
     public LayerMask whatIsGround;
 
@@ -24,13 +24,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 crouchScale = new Vector3(1, 0.5f, 1);
     private Vector3 playerScale;
 
-    public float slideForce = 400;
+    public float slideForce = 150f;
     public float slideCounterMovement = 0.2f;
     private Vector3 normalVector = Vector3.up;
 
     private bool readyToJump = true;
     private float jumpCooldown = 0.25f;
-    public float jumpForce = 550f;
+    public float jumpForce = 250f;
 
     [Header("Wall Running")]
     private bool isRightWall;
