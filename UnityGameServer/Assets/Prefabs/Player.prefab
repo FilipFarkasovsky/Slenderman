@@ -132,6 +132,8 @@ MonoBehaviour:
   username: 
   health: 0
   maxHealth: 100
+  papersFound: 0
+  distance: 0.95
   shootOrigin: {fileID: 4375789778787327676}
   playerMovement: {fileID: 625840060130901405}
   itemAmount: 0
@@ -151,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orientation: {fileID: 1698349967616810557}
   moveSpeed: 900
-  maxSpeed: 3
+  maxSpeed: 7
   grounded: 0
   whatIsGround:
     serializedVersion: 2

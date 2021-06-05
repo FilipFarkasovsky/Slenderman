@@ -20,7 +20,10 @@ public enum ServerPackets
     itemPickedUp,
     spawnProjectile,
     projectilePosition,
-    projectileExploded
+    projectileExploded,
+    createPaperSpawner,
+    paperSpawned,
+    paperPickedUp
 }
 
 /// <summary>Sent from client to server.</summary>

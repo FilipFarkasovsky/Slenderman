@@ -240,6 +240,11 @@ public class Client
         {
             ServerSend.CreateItemSpawner(id, _itemSpawner.spawnerId, _itemSpawner.transform.position, _itemSpawner.hasItem);
         }
+
+        foreach (PaperSpawner _paperSpawner in PaperSpawner.spawners.Values)
+        {
+            ServerSend.CreatePaperSpawner(id, _paperSpawner.spawnerId, _paperSpawner.transform.position, _paperSpawner.hasItem);
+        }
     }
 
     /// <summary>Disconnects the client and stops all network traffic.</summary>

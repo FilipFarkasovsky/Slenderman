@@ -310,7 +310,10 @@ public class Client : MonoBehaviour
             { (int)ServerPackets.itemPickedUp, ClientHandle.ItemPickedUp },
             { (int)ServerPackets.spawnProjectile, ClientHandle.SpawnProjectile },
             { (int)ServerPackets.projectilePosition, ClientHandle.ProjectilePosition },
-            { (int)ServerPackets.projectileExploded, ClientHandle.ProjectileExploded }
+            { (int)ServerPackets.projectileExploded, ClientHandle.ProjectileExploded },
+            { (int)ServerPackets.createPaperSpawner, ClientHandle.CreatePaperSpawner },
+            { (int)ServerPackets.paperSpawned, ClientHandle.PaperSpawned },
+            { (int)ServerPackets.paperPickedUp, ClientHandle.PaperPickedUp }
         };
         Debug.Log("Initialized packets.");
     }

@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
 
     public static Dictionary<int, PlayerManager> players = new Dictionary<int, PlayerManager>();
     public static Dictionary<int, ItemSpawner> itemSpawners = new Dictionary<int, ItemSpawner>();
+    public static Dictionary<int, PaperSpawner> paperSpawners = new Dictionary<int, PaperSpawner>();
     public static Dictionary<int, ProjectileManager> projectiles = new Dictionary<int, ProjectileManager>();
 
     public GameObject localPlayerPrefab;
     public GameObject playerPrefab;
     public GameObject itemSpawnerPrefab;
+    public GameObject paperSpawnerPrefab;
     public GameObject projectilePrefab;
 
     private void Awake()
@@ -54,6 +56,13 @@ public class GameManager : MonoBehaviour
         GameObject _spawner = Instantiate(itemSpawnerPrefab, _position, itemSpawnerPrefab.transform.rotation);
         _spawner.GetComponent<ItemSpawner>().Initialize(_spawnerId, _hasItem);
         itemSpawners.Add(_spawnerId, _spawner.GetComponent<ItemSpawner>());
+    }
+
+    public void CreatePaperSpawner(int _spawnerId, Vector3 _position, bool _hasItem)
+    {
+        GameObject _spawner = Instantiate(paperSpawnerPrefab, _position, paperSpawnerPrefab.transform.rotation);
+        _spawner.GetComponent<PaperSpawner>().Initialize(_spawnerId, _hasItem);
+        paperSpawners.Add(_spawnerId, _spawner.GetComponent<PaperSpawner>());
     }
 
     public void SpawnProjectile(int _id, Vector3 _position)

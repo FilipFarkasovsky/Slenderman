@@ -126,4 +126,29 @@ public class ClientHandle : MonoBehaviour
 
         GameManager.projectiles[_projectileId].Explode(_position);
     }
+
+    public static void CreatePaperSpawner(Packet _packet)
+    {
+        int _spawnerId = _packet.ReadInt();
+        Vector3 _spawnerPosition = _packet.ReadVector3();
+        bool _hasItem = _packet.ReadBool();
+
+        GameManager.instance.CreatePaperSpawner(_spawnerId, _spawnerPosition, _hasItem);
+    }
+
+    public static void PaperSpawned(Packet _packet)
+    {
+        int _spawnerId = _packet.ReadInt();
+
+        GameManager.paperSpawners[_spawnerId].PaperSpawned();
+    }
+
+    public static void PaperPickedUp(Packet _packet)
+    {
+        int _spawnerId = _packet.ReadInt();
+        int _byPlayer = _packet.ReadInt();
+
+        GameManager.paperSpawners[_spawnerId].PaperPickedUp();
+        GameManager.players[_byPlayer].itemCount++;
+    }
 }

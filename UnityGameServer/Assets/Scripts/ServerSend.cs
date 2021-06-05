@@ -239,5 +239,39 @@ public class ServerSend
             SendTCPDataToAll(_packet);
         }
     }
+
+    public static void CreatePaperSpawner(int _toClient, int _spawnerId, Vector3 _spawnerPosition, bool _hasItem)
+    {
+        using (Packet _packet = new Packet((int)ServerPackets.createPaperSpawner))
+        {
+            _packet.Write(_spawnerId);
+            _packet.Write(_spawnerPosition);
+            _packet.Write(_hasItem);
+
+            SendTCPData(_toClient, _packet);
+        }
+    }
+
+    public static void PaperSpawned(int _spawnerId)
+    {
+        using (Packet _packet = new Packet((int)ServerPackets.paperSpawned))
+        {
+            _packet.Write(_spawnerId);
+
+            SendTCPDataToAll(_packet);
+        }
+    }
+
+    public static void PaperPickedUp(int _spawnerId, int _byPlayer)
+    {
+        using (Packet _packet = new Packet((int)ServerPackets.paperPickedUp))
+        {
+            _packet.Write(_spawnerId);
+            _packet.Write(_byPlayer);
+
+            SendTCPDataToAll(_packet);
+        }
+    }
+
     #endregion
 }

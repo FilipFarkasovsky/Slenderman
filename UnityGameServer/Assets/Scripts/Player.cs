@@ -12,6 +12,12 @@ public class Player : MonoBehaviour
     public float health;
     public float maxHealth = 100f;
 
+    [Header("Paper")]
+    public int papersFound = 0;
+    public float distance = 10f;
+    bool canGrab;
+    GameObject paperPicked;
+
     private bool[] inputs;
 
     [Header("Assignables")]
@@ -24,7 +30,7 @@ public class Player : MonoBehaviour
     public float throwForce = 1200f;
     #endregion
 
-    #region start and update
+    #region start and update |INPUTS AND MOTION|
     void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
@@ -104,9 +110,33 @@ public class Player : MonoBehaviour
     }
     #endregion
 
+
     #region multiplayer methods
+
     public void Shoot(Vector3 _viewDirection)
     {
+        RaycastHit hit;
+
+        if (Physics.Raycast(shootOrigin.position, _viewDirection, out hit, distance))
+        {
+            if (hit.collider.CompareTag("Paper"))
+            {
+                canGrab = true;
+                paperPicked = hit.transform.gameObject;
+            }
+        }
+        else
+        {
+            canGrab = false;
+        }
+
+        if (canGrab)
+        {
+            Debug.Log("Paper found sending to clients");
+            paperPicked.GetComponent<PaperSpawner>().PaperPickedUp(this);
+        }
+
+        /*
         if (health <= 0f)
         {
             return;
@@ -119,6 +149,7 @@ public class Player : MonoBehaviour
                 _hit.collider.GetComponent<Player>().TakeDamage(50f);
             }
         }
+        */
     }
 
     public void ThrowItem(Vector3 _viewDirection)
