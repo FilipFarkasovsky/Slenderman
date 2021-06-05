@@ -23,7 +23,8 @@ public enum ServerPackets
     projectileExploded,
     createPaperSpawner,
     paperSpawned,
-    paperPickedUp
+    paperPickedUp,
+    makePlayerSlender
 }
 
 /// <summary>Sent from client to server.</summary>

@@ -6,6 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     public int id;
     public string username;
+    public bool isSlender;
     public float health;
     public float maxHealth = 100f;
     public int itemCount = 0;
@@ -37,5 +38,10 @@ public class PlayerManager : MonoBehaviour
     {
         model.enabled = true;
         SetHealth(maxHealth);
+    }
+
+    public void MakeSlender()
+    {
+        isSlender = true;
     }
 }

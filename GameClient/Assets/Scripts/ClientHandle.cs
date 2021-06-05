@@ -151,4 +151,11 @@ public class ClientHandle : MonoBehaviour
         GameManager.paperSpawners[_spawnerId].PaperPickedUp();
         GameManager.players[_byPlayer].itemCount++;
     }
+
+    public static void MakePlayerSlender(Packet _packet)
+    {
+        int _id = _packet.ReadInt();
+
+        GameManager.players[_id].MakeSlender(); ;
+    }
 }

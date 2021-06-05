@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [Header("Players informations")]
     public int id;
     public string username;
+    public bool isSlender;
     public float health;
     public float maxHealth = 100f;
 
