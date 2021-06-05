@@ -150,21 +150,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orientation: {fileID: 1698349967616810557}
-  moveSpeed: 4500
-  maxSpeed: 20
+  moveSpeed: 900
+  maxSpeed: 3
   grounded: 0
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
   counterMovement: 0.175
   maxSlopeAngle: 35
-  slideForce: 400
-  slideCounterMovement: 0.2
-  jumpForce: 550
-  x: 0
-  y: 0
-  jumping: 0
-  crouching: 0
+  slideForce: 150
+  slideCounterMovement: 0.175
+  jumpForce: 250
 --- !u!54 &5699945089782225422
 Rigidbody:
   m_ObjectHideFlags: 0
