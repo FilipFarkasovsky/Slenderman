@@ -156,6 +156,6 @@ public class ClientHandle : MonoBehaviour
     {
         int _id = _packet.ReadInt();
 
-        GameManager.players[_id].MakeSlender(); ;
+        GameManager.players[_id].MakeSlender(_id); 
     }
 }

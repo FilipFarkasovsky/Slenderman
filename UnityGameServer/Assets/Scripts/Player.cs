@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
 
     [Header("Paper")]
     public int papersFound = 0;
-    public float distance = 10f;
+    public float distance = 0.95f;
     bool canGrab;
     GameObject paperPicked;
 

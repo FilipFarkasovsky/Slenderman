@@ -223,6 +223,7 @@ public class Client
                 if (_client.id != id)
                 {
                     ServerSend.SpawnPlayer(id, _client.player);
+                    ServerSend.MakePlayerSlender(GameManager.instance.slenderID);
                 }
             }
         }
