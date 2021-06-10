@@ -26,11 +26,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172086184467933461}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.052368164, y: -0.5728226, z: -0.15222168}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children: []
-  m_Father: {fileID: 8819256922348106597}
+  m_Father: {fileID: 1417980368259016963}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3024847138724150361
@@ -94,6 +94,38 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1262829968377883856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1417980368259016963}
+  m_Layer: 0
+  m_Name: Citizen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1417980368259016963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262829968377883856}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.052368164, y: 0.4728241, z: 0.15222168}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8720703571214989855}
+  - {fileID: 3765735014614035375}
+  m_Father: {fileID: 8819256922348106597}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2496457105052717757
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +252,7 @@ Transform:
   - {fileID: 5581856892101976794}
   - {fileID: 4472693999693463100}
   m_Father: {fileID: 8819256922348106597}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5581934819814984956
 MonoBehaviour:
@@ -1122,9 +1154,8 @@ Transform:
   m_LocalPosition: {x: 321.8996, y: 107.521034, z: -300.09445}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8720703571214989855}
-  - {fileID: 3765735014614035375}
   - {fileID: 95151476115975731}
+  - {fileID: 1417980368259016963}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1147,7 +1178,7 @@ MonoBehaviour:
   maxHealth: 100
   itemCount: 0
   model: {fileID: 829117775900897876}
-  citizenModel: {fileID: 1172086184467933461}
+  citizenModel: {fileID: 1262829968377883856}
   slenderModel: {fileID: 4419077350598695191}
 --- !u!1 &7974139461043130140
 GameObject:
@@ -1176,10 +1207,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7974139461043130140}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.35, z: 0.215}
+  m_LocalPosition: {x: 0.052368164, y: -0.12282562, z: 0.06277466}
   m_LocalScale: {x: 0.62174, y: 0.20455, z: 0.55818}
   m_Children: []
-  m_Father: {fileID: 8819256922348106597}
+  m_Father: {fileID: 1417980368259016963}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7562821817305556530

@@ -178,16 +178,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606cea81bb031a0408c8e740ce3ddf9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 8.2
+  viewRadius: 35
   viewAngle: 60
+  damage: 50
   targetMask:
     serializedVersion: 2
     m_Bits: 16
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
-  meshResolution: 1
-  viewMeshFilter: {fileID: 1638920731165034804}
   visibleTargets: []
 --- !u!54 &5699945089782225422
 Rigidbody:

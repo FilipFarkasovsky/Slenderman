@@ -9,6 +9,7 @@ public class FieldOfView : MonoBehaviour
 	public float viewRadius;
 	[Range(0, 360)]
 	public float viewAngle;
+	public float damage;
 
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
@@ -50,7 +51,7 @@ public class FieldOfView : MonoBehaviour
 
 					if(!GetComponent<Player>().isSlender && target.GetComponent<Player>().isSlender)
                     {
-						GetComponent<Player>().TakeDamage(20f / dstToTarget);
+						GetComponent<Player>().TakeDamage(damage / dstToTarget);
 
 					}
 				}
