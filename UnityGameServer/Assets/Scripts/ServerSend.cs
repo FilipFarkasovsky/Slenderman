@@ -275,6 +275,8 @@ public class ServerSend
 
     public static void MakePlayerSlender(int _playerId)
     {
+        Debug.Log($"Making player slender with ID {_playerId}");
+
         using (Packet _packet = new Packet((int)ServerPackets.makePlayerSlender))
         {
             _packet.Write(_playerId);

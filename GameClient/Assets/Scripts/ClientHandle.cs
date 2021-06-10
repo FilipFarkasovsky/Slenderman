@@ -156,6 +156,13 @@ public class ClientHandle : MonoBehaviour
     {
         int _id = _packet.ReadInt();
 
-        GameManager.players[_id].MakeSlender(_id); 
+        Debug.Log($"Player is slender with id{_id}");
+
+        PlayerManager playerScript= null;
+        GameManager.players.TryGetValue(_id, out playerScript);
+        if (default(PlayerManager) != playerScript)
+        {
+            playerScript.MakeSlender(_id);
+        }
     }
 }

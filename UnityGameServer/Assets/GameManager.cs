@@ -25,24 +25,50 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Server.clients.Count >= playersNeeded && !someoneIsSlender)
-        {
-            int randomPlayerID = Random.Range(0, Server.clients.Keys.Count);
+        StartSlender();
+    }
 
-            Client client;
-            Server.clients.TryGetValue(randomPlayerID, out client);
-            if(client != null)
+    void StartSlender()
+    {
+        if (Server.clients.Count >= playersNeeded && ( !someoneIsSlender || slenderID == -1))
+        {
+            int randomPlayerID = Random.Range(1, Server.clients.Keys.Count);
+
+            MakePlayerSlender(randomPlayerID);
+        }
+    }
+
+    public void MakePlayerSlender(int _id)
+    {
+        Client client;
+        Server.clients.TryGetValue(_id, out client);
+        if (client != null)
+        {
+            Player slender = client.player;
+            if (slender != null)
             {
-                Player slender = client.player;
-                if(slender != null)
+                if(someoneIsSlender || slenderID != - 1)
                 {
-                    slender.isSlender = true;
-                    someoneIsSlender = true;
-                    slenderID = randomPlayerID;
-                    ServerSend.MakePlayerSlender(randomPlayerID);
-                    Debug.Log($"{randomPlayerID} is Slender");
+                    MakePlayerCitizen(slenderID);
                 }
+                slender.isSlender = true;
+                someoneIsSlender = true;
+                slenderID = _id;
+                ServerSend.MakePlayerSlender(_id);
             }
+        }
+    }
+
+    public void MakePlayerCitizen (int _id)
+    {
+        Client oldClient;
+        Server.clients.TryGetValue(_id, out oldClient);
+        if (oldClient != null)
+        {
+            Player oldSlender = oldClient.player;
+            oldSlender.isSlender = false;
+            slenderID = -1;
+            someoneIsSlender = false;
         }
     }
 }

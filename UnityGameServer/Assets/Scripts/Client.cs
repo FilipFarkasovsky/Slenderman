@@ -223,7 +223,6 @@ public class Client
                 if (_client.id != id)
                 {
                     ServerSend.SpawnPlayer(id, _client.player);
-                    ServerSend.MakePlayerSlender(GameManager.instance.slenderID);
                 }
             }
         }
@@ -236,6 +235,8 @@ public class Client
                 ServerSend.SpawnPlayer(_client.id, player);
             }
         }
+
+        ServerSend.MakePlayerSlender(GameManager.instance.slenderID);
 
         foreach (ItemSpawner _itemSpawner in ItemSpawner.spawners.Values)
         {
@@ -251,6 +252,8 @@ public class Client
     /// <summary>Disconnects the client and stops all network traffic.</summary>
     private void Disconnect()
     {
+        GameManager.instance.MakePlayerCitizen(id);
+
         Debug.Log($"{tcp.socket.Client.RemoteEndPoint} has disconnected.");
 
         ThreadManager.ExecuteOnMainThread(() =>

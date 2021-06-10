@@ -18,7 +18,7 @@ public class FieldOfView : MonoBehaviour
 
 	void Start()
 	{
-		StartCoroutine("FindTargetsWithDelay", .2f);
+		StartCoroutine("FindTargetsWithDelay", 0.2f);
 	}
 
 
@@ -47,6 +47,12 @@ public class FieldOfView : MonoBehaviour
 				if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
 				{
 					visibleTargets.Add(target);
+
+					if(!GetComponent<Player>().isSlender && target.GetComponent<Player>().isSlender)
+                    {
+						GetComponent<Player>().TakeDamage(20f / dstToTarget);
+
+					}
 				}
 			}
 		}
